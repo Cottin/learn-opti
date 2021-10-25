@@ -5,7 +5,7 @@ As you can see, we have one config file for webpack in our project called `webpa
 ## 1. Separate your configs
  It's common to instead of only having one `webpack.config.js` have 3 like so `webpack.common.js`, `webpack.production.js` and `webpack.development.js`. But since there's not that much configuration in most projects we can also split the config in the same file.
 
-- Read about the [webpack-merge](https://github.com/survivejs/webpack-merge) package and spit your configs into 3 object litterals in `webpack.config.js`.
+- Read about the [webpack-merge](https://github.com/survivejs/webpack-merge) package and spit your configs into 3 object litterals in `webpack.config.js` as described under "Limitations" in the docs.
 
 
 ## 2. Mode
@@ -69,41 +69,41 @@ Update your `package.json` to have include a couple of new scripts like so:
 	//package.json
 	"scripts": {
 	  "dev": "webpack serve --mode development --open --progress",
-	  "build:prod": "cross-env NODE_ENV=production webpack --mode production",
+	  "build:prod": "cross-env NODE_ENV=production webpack --mode production"
 	},
 
 - Note that we added the --mode options to separate the configs.
 - If you'd have separate files, you'd e.g. do webpack serve --config webpack.development.js  --open --progress 
 - We also setting the environmental variable NODE_ENV=production. Many libraries include extra debug information or similar if we're running node.js in development environment (which is the default).
-- Note that we're using the cross-env package to set the environment variables. This is because windows behaves differently than unix/mac when it comes to env vars unless you're using bash in Windows. You will need to `npm i -D cross-env` to your project.
+- Note that we're using the cross-env package to set the environment variables. This is because windows behaves differently than unix/mac when it comes to env vars unless you're using bash in Windows. You will probably need to `npm i -D cross-env` to your project.
 
 ## 3. Specific analyze script
 Bundle analyzing is interesting to keep track of what is added to our project and to make sure we're not bloating our bundle. But it's typically not something we're looking at every time we're working so let's create separate analyze scripts.
 
 - Modify scripts in your `package.json` to include two specific analyze scripts like so
 
-	"dev": "webpack serve --mode development --open --progress",
-	"build:prod": "cross-env NODE_ENV=production webpack --mode production",
-	"analyze:prod": "cross-env NODE_ENV=production BUNDLE_ANALYZE=true webpack --mode production",
-	"analyze:dev": "cross-env BUNDLE_ANALYZE=true webpack --mode development"
+		"dev": "webpack serve --mode development --open --progress",
+		"build:prod": "cross-env NODE_ENV=production webpack --mode production",
+		"analyze:prod": "cross-env NODE_ENV=production BUNDLE_ANALYZE=true webpack --mode production",
+		"analyze:dev": "cross-env BUNDLE_ANALYZE=true webpack --mode development"
 
 - We're here setting a made up environment variable `BUNDLE_ANALYZE` to true for the `analyze` scripts.
 
 - Update your `webpack.config.js` to make use of that variable and only add the analyzer plugin when we want it.
 
-	const isAnalyze = typeof process.env.BUNDLE_ANALYZE !== "undefined";
+		const isAnalyze = typeof process.env.BUNDLE_ANALYZE !== "undefined";
 
-	const common = {
-		entry: './src/index.js',
-		plugins: [
-			new HtmlWebpackPlugin({
-				hash: true,
-				template: './src/index.html',
-			}),
-			isAnalyze && new BundleAnalyzerPlugin()
-		].filter(Boolean),
+		const common = {
+			entry: './src/index.js',
+			plugins: [
+				new HtmlWebpackPlugin({
+					hash: true,
+					template: './src/index.html',
+				}),
+				isAnalyze && new BundleAnalyzerPlugin()
+			].filter(Boolean),
 
-	// Note the `.filter(Boolean)` at the bottom. A trick to get rid of the `false` value when isAnalyze is not set (we cannot run false as a plugin).
+	Note the `.filter(Boolean)` at the bottom. A trick to get rid of the `false` value when isAnalyze is not set (we cannot run false as a plugin).
 
 - Run your `build:prod` script. You should not get a window opening in the browser with the analyzer graph. You should se a `learn-opti/dist` folder though, containing the output of the build.
 - Now run `analyze:prod` and you should see the graph opening in your browser. 
