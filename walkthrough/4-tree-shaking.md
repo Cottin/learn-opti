@@ -12,9 +12,9 @@ Tree shaking is enabled by default in webpack 4 and 5. However, tree shaking is 
 
 - Have a look at the [lodash website](https://lodash.com/) and check the section of "Module Formats". Seems lodash comes in a variaty of formats: `lodash`, `per method packages`, `lodash-es`, `lodash/fp` and `lodash-amd`.
 - Realize which one of those is able to be tree shaken and install that package and switch to use that instead in `App.js`. eg. `import {values} from 'lodash-the-package-you-choose'`
-- :camel: Now rerun `build:prod`, how big is lodash in the bundle now? What is happening?
+- :camel: Now rerun `analyze:prod`, how big is lodash in the bundle now? What is happening?
 - Make the following change in `Page.js`: `import _ from 'lodash-the-package-you-choose'` and make sure to change the lines lower down to `const countries = _.values(data)`
-- :camel: Rerun `build:prod`, is a big lodash module back? Has the total bundle size increased?
+- :camel: Rerun `analyze:prod`, is a big lodash module back? Has the total bundle size increased?
 
 When you're done, switch back to `import {values} from 'the-right-lodash-package'` and `const countries = values(data)` so we're not bloating our bundle.
 
