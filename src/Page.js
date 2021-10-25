@@ -2,9 +2,9 @@ import React, {useState, useCallback} from 'react'
 import './Page.css'
 import Modal from './Modal'
 import countryMap from '../data/country_data_summery.js'
-import {values} from 'lodash-es'
+import values from 'lodash/values'
 
-const countries = values(countryMap)
+const countries = _.values(countryMap)
 
 function Page({filter}) {
 	const [chosenCountry, setChosenCountry] = useState(null)
