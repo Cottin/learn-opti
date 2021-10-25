@@ -9,7 +9,7 @@ Replace the code in `Modal.js` with the following:
 
 	import {useState} from 'react'
 	import './Modal.css'
-	import fullData from '../country_data_full'
+	import fullData from '../data/country_data_full'
 
 	function Modal({country, onClose}) {
 		return (
