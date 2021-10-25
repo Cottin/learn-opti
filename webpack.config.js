@@ -37,9 +37,13 @@ const common = {
 	},
 }
 
-const production = {}
+const production = {
+	devtool: 'source-map',
+}
 
-const development = {}
+const development = {
+	devtool: 'eval-source-map',
+}
 
 
 module.exports = (env, args) => {
