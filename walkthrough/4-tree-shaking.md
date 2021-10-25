@@ -3,8 +3,9 @@ Some years ago, it was considered bad to add a library like lodash if you only u
 
 
 ## 1. Setup
+- Run `analyze:prod` and look in the graph, how big is lodash (KB)?
 - In `Page.js` change the import of `lodash` to `import {values} from 'lodash'`.
-- :camel: Run `build:prod` and look in the graph, how big is lodash now (KB)?
+- :camel: Run `analyze:prod` and look in the graph, how big is lodash now (KB)?
 
 ## 2. Shake some trees
 Tree shaking is enabled by default in webpack 4 and 5 BUT NOT DEVELOPMENT? However, tree shaking is based on then static structure of ES2015 module syntax, eg. `import` and `export`. This means webpack will not be able to tree shake any library that uses the commonjs style of exports, eg. `module.exports = ...`.
