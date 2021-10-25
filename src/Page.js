@@ -4,7 +4,7 @@ import Modal from './Modal'
 import countryMap from '../data/country_data_summery.js'
 import values from 'lodash/values'
 
-const countries = _.values(countryMap)
+const countries = values(countryMap)
 
 function Page({filter}) {
 	const [chosenCountry, setChosenCountry] = useState(null)
