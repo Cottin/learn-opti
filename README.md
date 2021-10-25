@@ -1,4 +1,4 @@
-# Basic optimization of a JS-app with Webpack and React 
+# Basic optimization with Webpack and React 
 In this lab, we look at ways of optimizing a basic js / react application using webpack.
 
 The data in this lab is taken from [https://databank.worldbank.org/source/world-development-indicators](https://databank.worldbank.org/source/world-development-indicators)
@@ -15,13 +15,11 @@ Work in groups of 2 and follow the instructions below step by step and write dow
 - Uglification and minimization
 - Source mapping
 - Code splitting
-- (Lazy loading)
-- Chrome devtools
 - Optimization in react 
 
 ## Hand in
 
-There will not be any hand in, this is a classroom exercise so just follow along.
+There will not be any hand in, this is a classroom exercise so just make a good effort to solve the problems and learn stuff :)
 
 [Continue](/walkthrough/1-setup.md)
 
@@ -29,11 +27,11 @@ There will not be any hand in, this is a classroom exercise so just follow along
 
 - [1 - Setup](/walkthrough/1-setup.md)
 - [2 - Analyze Bundle](/walkthrough/2-analyze-bundle.md)
-- [3 - Separate Configs](/walkthrough/3-separate-configt.md)
+- [3 - Separate Configs](/walkthrough/3-separate-configs.md)
 - [4 - Tree Shaking](/walkthrough/4-tree-shaking.md)
-- [5 - Minity and Sourcemaps](/walkthrough/5-minify-and-sourcemaps.md)
+- [5 - Minify and Sourcemaps](/walkthrough/5-minify-and-sourcemaps.md)
 - [6 - Code Splitting](/walkthrough/6-code-splitting.md)
-- [7 - Optimize React Components](/walkthrough/1-optimize-react-components.md)
+- [7 - Optimize React Components](/walkthrough/7-optimize-react-components.md)
 
 
 
