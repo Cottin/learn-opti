@@ -2,8 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
-export default {
+module.exports = {
 	entry: './src/index.js',
+	mode: 'development',
 	plugins: [
 		new HtmlWebpackPlugin({
 			hash: true,

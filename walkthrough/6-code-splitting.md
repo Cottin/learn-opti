@@ -1,4 +1,4 @@
-# 5 - Code splitting
+# 6 - Code splitting
 A frontend application can get rather big if it's not very simple, especially if we're using many libraries to help us build it. At the same time, it's not really necessary to load the full app from the beginning. What if we could split our app into smaller parts and only load the part that's needed?
 
 ## 1. Check the size
