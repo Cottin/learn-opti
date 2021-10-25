@@ -67,7 +67,7 @@ Replace the code in `Modal.js` with the following:
 		else if (n > 1000000000) return `${Math.floor(n/1000000)} M`
 		else if (n > 1000000) return `${(n/1000000).toFixed(1)} M`
 		else if (n > 999) return n.toLocaleString('sv-SE')
-		else n.toFixed(1)
+		else return n.toFixed(1)
 	}
 
 	export default Modal;
