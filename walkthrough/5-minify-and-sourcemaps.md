@@ -29,9 +29,9 @@ We're lucky in that since Webpack 4 minifacation is turned on by default for our
 		  debugger // <-------
 		  const [chosenCountry, setChosenCountry] = useState(null)
 
-- Re-run `npm run dev` and when the page loads in chrome, open developer tools and reload the page. Chrome should stop execution at your debugger statement.
+- Re-run `npm run dev` and when the page loads in chrome, open developer tools and reload the page. Chrome should stop execution at your debugger statement. Try pressing F10 to step forward and pay attention to how the Page.js file looks like in Chrome.
 - Change the devtool to `devtool: 'eval-source-map',` to the development object literal in your `webpack.config.js` file.
-- Re-run `npm run dev` again and when the page loads in chrome, open developer tools and reload the page. Chrome should stop execution at your debugger statement.
+- Re-run `npm run dev` again and when the page loads in chrome, open developer tools and reload the page. Chrome should stop execution at your debugger statement. Again, try pressing F10 to step forward.
 - :camel: did the debugging experience look nicer the first or the second time? What was the difference?
 
 - Now run your `build:prod` script again
