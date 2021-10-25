@@ -2,7 +2,7 @@
 A frontend application can get rather big if it's not very simple, especially if we're using many libraries to help us build it. At the same time, it's not really necessary to load the full app from the beginning. What if we could split our app into smaller parts and only load the part that's needed?
 
 ## 1. Check the size
-Run `bundle:prod` and check the size of the bundle.js
+Run `build:prod` and check the size of the bundle.js
 
 ## 2. Add some code
 Replace the code in `Modal.js` with the following:
