@@ -19,7 +19,9 @@ Tree shaking is enabled by default in webpack 4 and 5. However, tree shaking is 
 When you're done, switch back to `import {values} from 'the-right-lodash-package'` and `const countries = values(data)` so we're not bloating our bundle.
 
 :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: 
+
 Well done! Let's wait for your fellow classmates to catch up and do a walk through of everything so far. In the mean time, try out the extra task below.
+
 :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: :metal: 
 
 ## Extra: Sort the countries
