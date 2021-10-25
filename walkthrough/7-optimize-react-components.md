@@ -44,7 +44,8 @@ In most areas of our application, reacts calculations are more than fast enough 
 		      </td>
 
 
-- Now run your app and the chrome devtools and make sure to have the console open so you can see console.logs
+- Now run your app and the chrome devtools and first go to the "Performance" tab and throttle your CPU to be x4 or x6 slower.
+- Then make sure to have the console open so you can see console.logs
 - :camel: Click a country. Why is it so slow and why are 217 countries rerendered just to open the modal?
 
 
