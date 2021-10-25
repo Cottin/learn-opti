@@ -106,4 +106,4 @@ Code-splitting is quite a big subject and there are a couple of different ways o
 
 All done, let's move on!
 
-[Continue](/walkthrough/7-optimize-search.md)
+[Continue](/walkthrough/7-optimize-react-components.md)
