@@ -27,9 +27,7 @@ We're lucky in that since Webpack 4 minifacation is turned on by default for our
 
 		function Page({countries}) {
 		  debugger // <-------
-		  return (
-		    <table className="page">
-		      <thead className="thead">
+		  const [chosenCountry, setChosenCountry] = useState(null)
 
 - Re-run `npm run dev` and when the page loads in chrome, open developer tools and reload the page. Chrome should stop execution at your debugger statement.
 - Change the devtool to `devtool: 'eval-source-map',` to the development object literal in your `webpack.config.js` file.
