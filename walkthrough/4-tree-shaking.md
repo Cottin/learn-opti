@@ -3,7 +3,7 @@ Some years ago, it was considered bad to add a library like lodash if you only u
 
 
 ## 1. Setup
-- In `App.js` change the import of `lodash` to `import {values} from 'lodash'`.
+- In `Page.js` change the import of `lodash` to `import {values} from 'lodash'`.
 - :camel: Run `build:prod` and look in the graph, how big is lodash now (KB)?
 
 ## 2. Shake some trees
