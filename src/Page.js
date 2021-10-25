@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './Page.css'
 import Modal from './Modal'
 import countryMap from '../data/country_data_summery.js'
-import values from 'lodash/values'
+import {values} from 'lodash-es'
 
 const countries = values(countryMap)
 
