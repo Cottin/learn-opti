@@ -3,7 +3,7 @@ As front end developers we shouldn't be punished for having descriptive variable
 
 We're lucky in that since Webpack 4 minifacation is turned on by default for our production builds. Take a look at [https://webpack.js.org/configuration/optimization/](https://webpack.js.org/configuration/optimization/) for a deeper explanation.
 
-## 1 Double check minification is working
+## 1. Double check minification is working
 
 - Add a dev build to your package.json:
 
@@ -17,7 +17,7 @@ We're lucky in that since Webpack 4 minifacation is turned on by default for our
 - :camel: Run `npm run dev`. Is the dist folder created now also?
 
 
-## 2 Add source mapping
+## 2. Add source mapping
 
 - Have a look at the [webpack/devtool](https://webpack.js.org/configuration/devtool/) documentation
 
