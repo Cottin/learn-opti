@@ -6,7 +6,10 @@ const {merge} = require('webpack-merge');
 const isAnalyze = typeof process.env.BUNDLE_ANALYZE !== "undefined"
 
 const common = {
-	entry: './src/index.js',
+	entry: {
+	  index: './src/index.js',
+	  modal: './src/Modal.js'
+	},
 	mode: 'development',
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -17,7 +20,7 @@ const common = {
 	].filter(Boolean),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'bundle.js',
+		filename: '[name].bundle.js',
 	},
 	module: {
 		rules: [
@@ -35,6 +38,9 @@ const common = {
 			},
 		]
 	},
+	optimization: {
+   	runtimeChunk: 'single',
+  }
 }
 
 const production = {
