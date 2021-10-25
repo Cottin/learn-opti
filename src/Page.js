@@ -2,19 +2,18 @@ import React, {useState} from 'react'
 import './Page.css'
 import Modal from './Modal'
 import countryMap from '../data/country_data_summery.js'
-import {values} from 'lodash-es'
+import _ from 'lodash'
 
-const countries = values(countryMap)
+const countries = _.values(countryMap)
 
 function Page({filter}) {
-	console.log('Rendering Page...')
 	const [chosenCountry, setChosenCountry] = useState(null)
 
 	const chosenCountryObj = countryMap[chosenCountry]
 
-	const onCountryChosen = useCallback((countryCode) => {
+	const onCountryChosen = (countryCode) => {
 		setChosenCountry(countryCode)
-	}, [])
+	}
 
 	return (
 		<div>
@@ -31,7 +30,7 @@ function Page({filter}) {
 					</tr>
 				</thead>
 				<tbody className="tbody">
-					{countries && countries.map((c) => <MemoizedCountry key={c.code} {...c} onChoose={onCountryChosen} />)}
+					{countries && countries.map((c) => <Country key={c.code} {...c} onChoose={onCountryChosen} />)}
 				</tbody>
 			</table>
 		</div>
@@ -39,13 +38,11 @@ function Page({filter}) {
 }
 
 function Country({name, code, series, onChoose}) {
-	console.log('Rendering country...')
 	return (
 		<tr className="country" onClick={(x) => onChoose(code)}>
 			<td className="cell-a">
 				<div className="f32"><div className={`flag ${code.toLowerCase()}`}></div></div>
 				<div className="p4 fw4">{name}</div>
-				<SlowComponent iterations={10} multiplier={10000000} />
 			</td>
 			<td className="cell-c">{shortenLargeNumberNicely(series["SP.POP.TOTL"])}</td>
 			<td className="cell-b"><Percent change={true} value={series["SP.POP.GROW"]} /></td>
@@ -55,8 +52,6 @@ function Country({name, code, series, onChoose}) {
 		</tr>
 	)
 }
-
-const MemoizedCountry = React.memo(Country)
 
 const shortenLargeNumberNicely = (n) => {
 	if (n > 1000000000) return `${Math.floor(n/1000000)} M`
@@ -93,28 +88,5 @@ function Percent({change, divBy100=false, value}) {
 	)
 }
 
-function calculatePrimes(iterations, multiplier) {
-    var primes = [];
-    for (var i = 0; i < iterations; i++) {
-      var candidate = i * (multiplier * Math.random());
-      var isPrime = true;
-      for (var c = 2; c <= Math.sqrt(candidate); ++c) {
-        if (candidate % c === 0) {
-            // not prime
-            isPrime = false;
-            break;
-         }
-      }
-      if (isPrime) {
-        primes.push(candidate);
-      }
-    }
-    return primes;
-  }
-
-  function SlowComponent({iterations, multiplier}) {
-    calculatePrimes(iterations, multiplier)
-    return null
-  }
 
 export default Page;

@@ -5,7 +5,7 @@ import Page from './Page'
 
 
 function App() {
-	const [country, setCountry]= useState(null)
+	const [country, setCountry] = useState(null)
 
 	return (
 		<div className="App">

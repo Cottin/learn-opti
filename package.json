@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "lodash": "^4.17.21",
-    "lodash-es": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -13,7 +12,6 @@
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.3",
-    "cross-env": "^7.0.3",
     "css-loader": "^6.4.0",
     "html-webpack-plugin": "^5.4.0",
     "style-loader": "^3.3.1",
@@ -24,11 +22,7 @@
     "webpack-merge": "^5.8.0"
   },
   "scripts": {
-    "dev": "webpack serve --mode development --open --progress",
-    "build:prod": "cross-env NODE_ENV=production webpack --mode production",
-    "build:dev": "webpack --mode development",
-    "analyze:prod": "cross-env NODE_ENV=production BUNDLE_ANALYZE=true webpack --mode production",
-    "analyze:dev": "cross-env BUNDLE_ANALYZE=true webpack --mode development"
+    "dev": "webpack serve --open --progress"
   },
   "eslintConfig": {
     "extends": [
