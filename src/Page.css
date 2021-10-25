@@ -1,0 +1,66 @@
+.page {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.thead {
+	width: 100%;
+}
+
+.tbody {
+	width: 100%;
+}
+
+th {
+	text-align: left;
+}
+
+.country {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	background-color: #ffffff;
+	margin: 0.5rem;
+	padding: 1rem;
+	box-shadow: 0 2px 2px -1px rgba(0,0,0,0.12);
+}
+
+.country:hover {
+	box-shadow: 0 2px 4px -1px rgba(0,0,0,0.22);
+	cursor: pointer;
+}
+
+.country-header {
+	color: var(--grey2);
+	margin: 0.5rem;
+	padding: 1rem;
+
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	margin: 0.5rem;
+	padding: 1rem;
+}
+
+
+.cell-a {
+	width: 37%;
+	padding: 0.2rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+.cell-b, .cell-c {
+	padding: 0.2rem;
+	text-align: right;
+	white-space: nowrap;
+}
+.cell-b {
+	width: 12%;
+}
+.cell-c {
+	width: 15%;
+}
