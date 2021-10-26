@@ -3,7 +3,7 @@
 
 ## 1. webpack-bundle-analyzer
 
-Read about the [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) and by using its documentation, add it to your project and make it run (`npm run dev`).
+Read about the [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) and by using its documentation, add it to your project (to your webpack.config.js) and make it run (`npm run dev`).
 
 By looking at the graphical analyzer...
 
